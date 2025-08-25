@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1754999005990_0" label="Java Main Sources" name="Java Main Sources"/>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1754999006003_1" label="Java Test Sources" name="Java Test Sources"/>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1754999034823_3" label="creditscore-service" name="creditscore-service">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/creditscore-service" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1755061736711_4" label="loan-service" name="loan-service"/>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1755076414635_5" label="sutherland-eureka-server" name="sutherland-eureka-server">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/sutherland-eureka-server" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1755583044705_6" label="sutherland-library-app" name="sutherland-library-app">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/sutherland-library-app" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/sutherland-login" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1754999006727_2" label="Window Working Set" name="Aggregate for window 1754999006727"/>
+</workingSetManager>

@@ -1,0 +1,5 @@
+package com.sutherland.login.service;
+
+public class LoginServiceImpl {
+
+}

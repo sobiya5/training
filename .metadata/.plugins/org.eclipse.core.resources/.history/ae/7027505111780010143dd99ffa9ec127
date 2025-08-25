@@ -1,0 +1,11 @@
+package com.sutherland.loan;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class LoanDetailsApp {
+	public static void main(String[] args) {
+		SpringApplication.run(LoanDetailsApp.class, args);
+	}
+}

@@ -1,0 +1,6 @@
+server.port : 8081
+spring.application.name : config-server-example
+
+#Git repo url
+spring.cloud.config.server.git.default-label=master
+spring.cloud.config.server.git.uri=https://github.com/mallikarjun912/sutherland-config-repo

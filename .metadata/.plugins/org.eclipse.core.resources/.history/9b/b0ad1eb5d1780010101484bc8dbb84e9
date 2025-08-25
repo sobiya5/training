@@ -1,0 +1,17 @@
+spring.application.name=loan-service
+
+server.port : 8283
+server.servlet.context-path=/loanapp 
+#database configuration
+spring.datasource.driverClassName : oracle.jdbc.driver.OracleDriver
+spring.datasource.url = jdbc:oracle:thin:@10.33.62.32:1521:xe
+spring.datasource.username = sobiya
+spring.datasource.password = 5556
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.Oracle10gDialect
+spring.jpa.hibernate.ddl-auto = update
+spring.jpa.show-sql=true
+
+#Eureka client configuration
+eureka.client.serviceUrl.defaultZone : http://localhost:8761/eureka
+eureka.client.registerWithEureka = true
+eureka.client.fetchRegistry = true

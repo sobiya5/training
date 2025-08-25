@@ -1,0 +1,45 @@
+package com.sutherland.loan.service;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sutherland.loan.entity.LoanDetails;
+import com.sutherland.loan.repo.LoanDetailsRepo;
+
+@Service
+public class LoanDetailsServiceImpl implements LoanDetailsService{
+	@Autowired
+	LoanDetailsRepo repo;
+	@Override
+	public int applyLoan(LoanDetails details) {
+		details.setLoanStatus("APPLIED"); 
+ 		details.setDateApplied(LocalDate.now()); 
+ 		details.setDateSanctioned(null); 
+		System.out.println(details);
+		repo.save(details);
+		return details.getLoanId();
+	}
+
+	@Override
+	public List<LoanDetails> findAll() {
+		return repo.findAll();
+	}
+
+	@Override
+	public LoanDetails checkLoanStatus(int loanId) {
+		Optional<LoanDetails> details = repo.findById(loanId);
+		return details.get();
+	}
+
+	@Override
+	public String verifyLoan(int loanId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

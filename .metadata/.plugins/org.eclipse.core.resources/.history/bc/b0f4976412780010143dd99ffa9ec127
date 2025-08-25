@@ -1,0 +1,54 @@
+package com.sutherland.loan.service;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.sutherland.loan.dto.CreditScore;
+import com.sutherland.loan.entity.LoanDetails;
+import com.sutherland.loan.repo.LoanDetailsRepo;
+
+@Service
+public class LoanDetailsServiceImpl implements LoanDetailsService{
+	private static final Integer Id = null;
+	@Autowired
+	LoanDetailsRepo repo;
+	@Autowired
+	RestTemplate template;
+	@Override
+	public int applyLoan(LoanDetails details) {
+		details.setLoanStatus("APPLIED"); 
+ 		details.setDateApplied(LocalDate.now()); 
+ 		details.setDateSanctioned(null); 
+		System.out.println(details);
+		repo.save(details);
+		return details.getLoanId();
+	}
+
+	@Override
+	public List<LoanDetails> findAll() {
+		return repo.findAll();
+	}
+
+	@Override
+	public LoanDetails checkLoanStatus(int loanId) {
+		Optional<LoanDetails> details = repo.findById(loanId);
+		return details.get();
+	}
+
+	@Override
+	public String verifyLoan(int loanId) {
+		Optional<LoanDetails>optional = repo.findById(Id);
+		LoanDetails loandetails = optional.get();
+		String url = "https://localhost:8182/creditscore/bypancard/"+loandetails.getPancard();
+		CreditScore score = template.getForObject(url,CreditScore.class);
+		System.out.println(score);		
+		return null;
+	}
+
+}

@@ -1,0 +1,6 @@
+package com.sutherland.library.entity;
+
+public class LoginPage {
+String username;
+String password;
+}

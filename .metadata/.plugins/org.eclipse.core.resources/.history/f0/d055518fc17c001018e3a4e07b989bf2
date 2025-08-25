@@ -1,0 +1,13 @@
+spring.application.name=sutherland-library-app
+
+server.port : 8383
+server.servlet.contextPath : /library
+
+#database configuration
+spring.datasource.driverClassName : oracle.jdbc.driver.OracleDriver
+spring.datasource.url = jdbc:oracle:thin:@localhost:1521:xe
+spring.datasource.username = mlk
+spring.datasource.password = 0912
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.Oracle10gDialect
+spring.jpa.hibernate.ddl-auto = update
+spring.jpa.show-sql=true

@@ -1,0 +1,5 @@
+package com.sutherland.login.repo;
+
+public interface LoginRepo {
+
+}

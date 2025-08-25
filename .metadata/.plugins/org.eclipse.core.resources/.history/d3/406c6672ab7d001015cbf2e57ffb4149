@@ -1,0 +1,67 @@
+package com.sutherland.login.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.sutherland.login.entity.LoginEntity;
+import com.sutherland.login.service.LoginService;
+
+@RestController
+@RequestMapping("/login")
+
+public class LoginController {
+	
+	
+	@Autowired
+    LoginService loginService;
+
+    @PostMapping("/addUser")
+    public String addUser(@RequestBody LoginEntity login) {
+        loginService.addUser(login);
+        return "User added successfully!";
+    }
+
+    @GetMapping("/getUser/{userId}")
+    public LoginEntity getUserById(@PathVariable int userId) {
+        return loginService.getUserById(userId);
+    }
+
+    @PostMapping("/validateUser")
+    public String validateUser(@RequestParam String username, @RequestParam String password) {
+        if (loginService.validateUser(username, password)) {
+            return "Login successful!";
+        } else {
+            return "Invalid username or password!";
+        }
+    }
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+//Repo
+package com.sutherland.login.repo;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.sutherland.login.entity.LoginEntity;
+
+@Repository
+
+public interface LoginRepo  extends JpaRepository<LoginEntity, Integer> {
+	
+	Optional<LoginEntity> findByUserName(String userName);
+
+}
